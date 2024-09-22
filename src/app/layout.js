@@ -1,5 +1,8 @@
+
 import localFont from "next/font/local";
 import "./globals.css";
+import { ThemeProvider } from "@/components/DarkMode/theme-provider";
+import { Navbar } from "@/components/Navbar";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -21,9 +24,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-auto`}
       >
-        {children}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            <Navbar/>
+            {children}
+          </ThemeProvider>
       </body>
     </html>
   );
