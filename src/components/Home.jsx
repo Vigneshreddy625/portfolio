@@ -1,10 +1,29 @@
 import { TypewriterEffect } from "./ui/typewriter-effect";
 import { TextGenerateEffect } from "./ui/text-generate-effect";
 import dynamic from "next/dynamic";
-
-
+import { Button } from "./ui/moving-border";
+import React from "react";
+import {
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalTrigger,
+} from "./ui/animated-modal";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import { GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon, UserCircleIcon } from "lucide-react";
 
 export default function Home({ id }) {
+  const images = [
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR80M8fem5EdhbDYkAwRASlm11TrNLrRtxCaQ&s",
+    "https://cdn.prod.website-files.com/65bcf809450f31de60e2c27a/65bcffd57d6c828224624888_64d4a979d5584a7ea7fd5fce_alexander-shatov-9Zjd7PE_FRM-unsplash.jpeg",
+    "https://github.blog/wp-content/uploads/2023/01/1200x640.png?fit=1200%2C640",
+    "https://play-lh.googleusercontent.com/YvIeFtcOu07BNT4gVRmcS9Lq82Tp7Fs2gnFY65T9KGFJDFDx8US7JRSerAoBkG0fDA",
+    "https://blog.simplecast.com/hubfs/Imported_Blog_Media/alexander-shatov-sIFCJHrUWPM-unsplash-Dec-29-2022-07-59-36-1326-PM-1-1.jpg",
+  ];
+
+
   const words = [
     { text: "Hi" },
     { text: "Guys" },
@@ -417,6 +436,100 @@ const globeConfig = {
     <div className="w-full md:w-4/5">
       <TextGenerateEffect words={description} />
     </div>
+    <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 lg:space-x-4">
+      <a href="/pdf/Vignesh_Reddy_Resume.pdf" target="_blank" rel="noopener noreferrer">
+    <Button
+        borderRadius="1.75rem"
+        className=" bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800"
+      >
+        Resume
+      </Button>
+      </a>
+      <div className="flex items-center justify-center">
+      <Modal>
+        <Button>
+        <ModalTrigger
+          className="text-white flex justify-center group/modal-btn">
+          <span
+            className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
+            Connect
+          </span>
+          <div
+            className="-translate-x-40 group-hover/modal-btn:translate-x-0 flex items-center justify-center absolute inset-0 transition duration-500 text-white z-20">
+            <UserCircleIcon/>
+          </div>
+        </ModalTrigger>
+        </Button>
+        <ModalBody>
+          <ModalContent>
+            <h4
+              className="text-lg md:text-2xl text-neutral-600 dark:text-neutral-100 font-bold text-center mb-8">
+              Connect with{" "}
+              <span
+                className="px-1 py-0.5 rounded-md bg-gray-100 dark:bg-neutral-800 dark:border-neutral-700 border border-gray-200">
+                me
+              </span>{" "}
+              now!
+            </h4>
+            <div className="flex justify-center items-center">
+              {images.map((image, idx) => (
+                <motion.div
+                  key={"images" + idx}
+                  style={{
+                    rotate: Math.random() * 20 - 10,
+                  }}
+                  whileHover={{
+                    scale: 1.1,
+                    rotate: 0,
+                    zIndex: 100,
+                  }}
+                  whileTap={{
+                    scale: 1.1,
+                    rotate: 0,
+                    zIndex: 100,
+                  }}
+                  className="rounded-xl -mr-4 mt-4 p-1 bg-white dark:bg-neutral-800 dark:border-neutral-700 border border-neutral-100 flex-shrink-0 overflow-hidden">
+                  <Image
+                    src={image}
+                    alt="bali images"
+                    width="500"
+                    height="500"
+                    className="rounded-lg h-20 w-20 md:h-40 md:w-40 object-cover flex-shrink-0" />
+                </motion.div>
+              ))}
+            </div>
+            <div
+              className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
+              <div className="flex  items-center justify-center">
+                <LinkedinIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://www.linkedin.com/in/vignesh-reddy-a4289b249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-blue-600 text-lg underline">
+                  Linkedin
+                </a>
+              </div>
+              <div className="flex items-center justify-center">
+                <GithubIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                  Github
+                </a>
+              </div>
+              <div className="flex items-center justify-center">
+                <TwitterIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                  Twitter
+                </a>
+              </div>
+              <div className="flex  items-center justify-center">
+                <InstagramIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                  Instagram
+                </a>
+              </div>
+            </div>
+          </ModalContent>
+        </ModalBody>
+      </Modal>
+    </div>
+      </div>
   </div>
   <div className="hidden md:block w-full md:w-1/2 h-full relative">
     <div className="absolute w-full h-full z-10">

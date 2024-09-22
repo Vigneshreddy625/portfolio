@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { LampContainer } from "./ui/lamp";
 import { StickyScroll } from "./ui/sticky-scroll-reveal";
 import Image from "next/image";
 import { Tabs } from "./ui/tabs";
@@ -123,6 +125,9 @@ export default function Projects({ id }) {
       </section>
     );
   }
+  
+
+
 
 
 
