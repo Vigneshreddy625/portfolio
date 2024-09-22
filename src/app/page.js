@@ -23,7 +23,7 @@ export default function Page() {
     <main>
       <Home id="home" />
       <About id="about" />
-      <Projects id="portfolio" />
+      <Projects id="projects" />
       <Contact id="contact" />
     </main>
   );
