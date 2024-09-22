@@ -64,7 +64,7 @@ export default function About({ id }) {
       id={id}
       className=" min-h-screen flex flex-col items-center justify-center w-scren overflow-hidden"
     >
-      <div className="h-full w-full flex-col py-32  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center z-0">
+      <div className="h-full w-full flex-col py-8  dark:bg-black bg-white  dark:bg-grid-white/[0.2] bg-grid-black/[0.2] relative flex items-center justify-center z-0">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className="flex flex-col justify-center items-center">
           <div className="flex flex-col justify-center items-center">

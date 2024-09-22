@@ -3,6 +3,7 @@ import { Label } from "./ui/label";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
 import { cn } from "@/lib/utils";
+import { Vortex } from "./ui/vortex";
 
 export default function contact({id}) {
   const handleSubmit = (e) => {
@@ -11,11 +12,16 @@ export default function contact({id}) {
   };
   return (
     <section id={id} className="min-h-screen flex flex-col justify-center items-center">
-      <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200 mb-10">
+      <div
+      className="w-[calc(100%)] mx-auto rounded-md  h-full overflow-hidden">
+      <Vortex
+        backgroundColor="black"
+        className="flex items-center flex-col justify-center px-2 md:px-10 py-4 w-full h-full bg-transparent">
+          <h2 className="font-bold text-3xl text-neutral-800 dark:text-neutral-200 mb-10">
         Contact Form
       </h2>
     <div
-      className="max-w-sm rounded-lg md:max-w-3xl w-full mx-auto md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black">
+      className="max-w-xs rounded-lg md:max-w-3xl w-full mx-auto md:rounded-2xl p-4 md:p-8 shadow-input bg-white dark:bg-black border">
       <form className="my-8" onSubmit={handleSubmit}>
           <LabelInputContainer className="mb-4">
             <Label htmlFor="firstname">Name</Label>
@@ -39,6 +45,9 @@ export default function contact({id}) {
           className="bg-gradient-to-r from-transparent via-neutral-300 dark:via-neutral-700 to-transparent my-8 h-[1px] w-full" />
       </form>
     </div>
+      </Vortex>
+    </div>
+      
     </section>
   );
 }
@@ -62,3 +71,4 @@ const LabelInputContainer = ({
     </div>)
   );
 };
+

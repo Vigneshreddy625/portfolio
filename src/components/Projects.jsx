@@ -10,7 +10,7 @@ export default function Projects({ id }) {
         alt="dummy image"
         width="1000"
         height="1000"
-        className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto" />)
+        className="object-fill object-left-top h-[70%]  md:h-[70%] absolute bottom-0 inset-x-0 w-[90%] rounded-xl mx-auto" />)
     );
   };
   const tabs = [
@@ -21,6 +21,7 @@ export default function Projects({ id }) {
         <div
           className="w-full overflow-hidden relative h-full rounded-2xl p-10 text-xl md:text-4xl font-bold text-white bg-gradient-to-br from-purple-700 to-violet-900">
           <p>Product Tab</p>
+          <p className="mt-2">Link: <span><a href="https://www.vercel.com">vercel</a></span></p>
           <DummyContent />
         </div>
       ),
@@ -110,7 +111,7 @@ export default function Projects({ id }) {
     },
   ];
     return (
-      <section id={id} className="min-h-screen flex flex-col items-center pt-32">
+      <section id={id} className="min-h-screen flex flex-col items-center justify-center pt-32">
         <h1 className="text-4xl font-bold">Projects</h1>
         <div className="hidden lg:block p-10">
       <StickyScroll content={content} />

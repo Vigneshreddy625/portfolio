@@ -33,7 +33,9 @@ export default function RootLayout({ children }) {
             disableTransitionOnChange
           >
             <Navbar/>
+            <div className="dark:bg-black">
             {children}
+            </div>
           </ThemeProvider>
       </body>
     </html>

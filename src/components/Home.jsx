@@ -408,7 +408,7 @@ const globeConfig = {
   return (
     <section
   id={id}
-  className="pt-36 md:pt-32 min-h-screen"
+  className="pt-36 md:pt-32 pb-10 min-h-screen"
 >
 
     <div className="flex flex-col md:flex-row items-center justify-center space-x-8 md:space-y-0 h-[40rem] w-full">
