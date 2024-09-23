@@ -13,6 +13,7 @@ import {
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { GithubIcon, InstagramIcon, LinkedinIcon, TwitterIcon, UserCircleIcon } from "lucide-react";
+import { IconBrandGithub, IconBrandGithubFilled, IconBrandInstagram, IconBrandLinkedin, IconBrandTwitterFilled } from "@tabler/icons-react";
 
 export default function Home({ id }) {
   const images = [
@@ -447,9 +448,9 @@ const globeConfig = {
       </a>
       <div className="flex items-center justify-center">
       <Modal>
-        <Button>
+        <Button className=" bg-white dark:bg-slate-900 text-black dark:text-white border-neutral-200 dark:border-slate-800">
         <ModalTrigger
-          className="text-white flex justify-center group/modal-btn">
+          className=" flex justify-center group/modal-btn">
           <span
             className="group-hover/modal-btn:translate-x-40 text-center transition duration-500">
             Connect
@@ -501,26 +502,26 @@ const globeConfig = {
             <div
               className="py-10 flex flex-wrap gap-x-4 gap-y-6 items-start justify-start max-w-sm mx-auto">
               <div className="flex  items-center justify-center">
-                <LinkedinIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <a href="https://www.linkedin.com/in/vignesh-reddy-a4289b249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" className="text-blue-600 text-lg underline">
+                <IconBrandLinkedin className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://www.linkedin.com/in/vignesh-reddy-a4289b249?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" className="text-blue-600 text-lg underline">
                   Linkedin
                 </a>
               </div>
               <div className="flex items-center justify-center">
-                <GithubIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                <IconBrandGithubFilled className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" target="_blank" className="text-blue-600 text-lg underline">
                   Github
                 </a>
               </div>
               <div className="flex items-center justify-center">
-                <TwitterIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                <IconBrandTwitterFilled className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" target="_blank" className="text-blue-600 text-lg underline">
                   Twitter
                 </a>
               </div>
               <div className="flex  items-center justify-center">
-                <InstagramIcon className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
-                <a href="https://github.com/Vigneshreddy625" className="text-blue-600 text-lg underline">
+                <IconBrandInstagram className="mr-1 text-neutral-700 dark:text-neutral-300 h-4 w-4" />
+                <a href="https://github.com/Vigneshreddy625" target="_blank" className="text-blue-600 text-lg underline">
                   Instagram
                 </a>
               </div>
