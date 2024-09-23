@@ -62,7 +62,7 @@ export default function Projects({ id }) {
             Link:{" "}
             <span>
               <a href="https://weather-app-ten-omega-17.vercel.app/">
-                JobsGuru
+                Weather App
               </a>
             </span>
           </p>
